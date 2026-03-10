@@ -3,7 +3,6 @@
  * Handles data compression, packing/unpacking, and CRUD operations
  */
 
-import { format } from 'date-fns';
 import { getDateData } from './focusTimerUtils';
 import { api } from '../services/api-simple';
 

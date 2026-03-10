@@ -183,7 +183,6 @@ export function getTodayTaskStats() {
   }
 
   const history = JSON.parse(taskHistory);
-  const dict = JSON.parse(taskDictionary);
   const dateKey = formatTodayDateKey();
   const dayData = history[dateKey];
 

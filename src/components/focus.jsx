@@ -85,6 +85,7 @@ const Focus = () => {
         // Set random tip
         const tips = MODES.focus.tips;
         setCurrentTip(tips[Math.floor(Math.random() * tips.length)]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // Timer loop

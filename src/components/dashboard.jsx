@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from 'react';
 import TaskModal from './TaskModal';
 import { format, startOfYear, endOfYear, eachDayOfInterval } from 'date-fns';
 import { Edit2, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { api } from '../services/api-simple';
 import { SYNC_EVENT } from '../App';
 import {
   getGoalAndTerm,
@@ -46,6 +45,7 @@ const Dashboard = () => {
     const dateStr = format(date, 'yyyy-MM-dd');
 
     // App ochilganda va server sync bo'lganda UI yangilanadi
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         loadData();
 
@@ -55,9 +55,6 @@ const Dashboard = () => {
         return () => window.removeEventListener(SYNC_EVENT, onSync);
     }, []);
 
-    function loadTasks() {
-        loadData();
-    }
 
     useEffect(() => {
         // Save current date's tasks before loading new date
@@ -78,11 +75,14 @@ const Dashboard = () => {
         loadData();
         const goalData = getGoalAndTerm();
         setGoalAndTerm(goalData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dateStr]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         updateStats();
         updateUnderlinePosition();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedStat]);
 
     function loadData() {
