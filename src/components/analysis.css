@@ -1,0 +1,281 @@
+.analysis-view {
+    flex: 1;
+    padding: 20px;
+    background-color: #131314;
+    height: calc(100vh - 64px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 25px;
+}
+
+.stats-page-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #e0e3e8;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.stats-section-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e0e3e8;
+    margin-bottom: 10px;
+}
+
+/* ═══ TODAY STATS ═══ */
+.stats-today-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.stat-today-card {
+    flex: 1;
+    border-radius: 20px;
+    padding: 18px 20px;
+}
+
+.stat-today-card.focus {
+    background-color: #004C70;
+}
+
+.stat-today-card.break {
+    background-color: #4c4161;
+}
+
+.stat-today-label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.stat-today-card.focus .stat-today-label {
+    color: #cae6fe;
+}
+
+.stat-today-card.break .stat-today-label {
+    color: #ecdcff;
+}
+
+.stat-today-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-today-card.focus .stat-today-value {
+    color: #cae6fe;
+}
+
+.stat-today-card.break .stat-today-value {
+    color: #ecdcff;
+}
+
+/* ═══ PERIOD BLOCK ═══ */
+.stat-period-block {
+    background-color: #36393e;
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+}
+
+.stat-period-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.stat-period-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e1e5e9;
+}
+
+.stat-period-icon {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #8c9299;
+    opacity: 0.7;
+}
+
+.stat-period-num-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.stat-period-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #e0e3e8;
+    line-height: 1;
+}
+
+.stat-period-desc {
+    font-size: 13px;
+    color: #e1e5e9;
+    font-weight: 400;
+}
+
+/* ═══ CHART WRAPPER ═══ */
+.chart-wrap {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+}
+
+.chart-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    min-width: 28px;
+}
+
+.chart-y-lbl {
+    font-size: 11px;
+    color: #8c9299;
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    line-height: 1;
+}
+
+.chart-area {
+    flex: 1;
+    position: relative;
+}
+
+/* ═══ BAR CHART ═══ */
+.bar-chart-inner {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 130px;
+    border-bottom: 1px solid #4c4161;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    height: 100%;
+}
+
+.bar {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    background-color: #4c4161;
+    min-height: 3px;
+    transition: height 0.5s ease;
+}
+
+.bar.has-data {
+    background-color: #b7c8d8;
+}
+
+.bar-lbl {
+    font-size: 10px;
+    color: #8c9299;
+    font-family: 'DM Mono', monospace;
+    white-space: nowrap;
+}
+
+/* Goal line */
+.goal-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1.5px dashed rgba(150, 204, 248, 0.5);
+    pointer-events: none;
+}
+
+.goal-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #96CCF8;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+/* ═══ CHART X LABELS ═══ */
+.chart-x-labels {
+    display: flex;
+    margin-top: 4px;
+}
+
+.chart-x-label {
+    font-size: 10px;
+    color: #8c9299;
+    font-family: 'DM Mono', monospace;
+    white-space: nowrap;
+    text-align: center;
+    flex: 1;
+}
+
+/* ═══ LIFETIME ═══ */
+.stat-lifetime-container {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+.stat-lifetime-block {
+    background-color: #394956;
+    border-radius: 20px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    width: calc(50% - 6px);
+}
+
+.stat-lifetime-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e0e3e8;
+    margin-bottom: 6px;
+}
+
+.stat-lifetime-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.stat-lifetime-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #e0e3e8;
+}
+
+.stat-lifetime-unit {
+    font-size: 13px;
+    color: #8ab88d;
+}
+
+/* ═══ SCROLLBAR ═══ */
+.analysis-view::-webkit-scrollbar {
+    width: 10px;
+}
+
+.analysis-view::-webkit-scrollbar-track {
+    background: #131314;
+    border-radius: 10px;
+}
+
+.analysis-view::-webkit-scrollbar-thumb {
+    background: #69696a;
+    border-radius: 10px;
+}
+
+.analysis-view::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

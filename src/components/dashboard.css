@@ -1,0 +1,488 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../source/fonts/static/Nunito-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #1e1f20;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.content-view {
+    flex: 1;
+    padding: 20px;
+    background-color: #131314;
+    /* Light gray for content area */
+    height: calc(100vh - 64px);
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin: 0 20px 0 0;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #394956;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.nav-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4c4161;
+    color: #e0e3e8;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #96CCF8;
+    color: #01344F;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e1f20;
+    color: #e0e3e8;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.date-input:focus {
+    outline: none;
+    background-color: #2d3436;
+}
+
+#content-title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #e0e3e8;
+}
+
+#content-term {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e0e3e8;
+}
+
+#time-left {
+    width: 150px;
+    height: 50px;
+    background-color: #4c4161;
+    border-radius: 15px;
+    color: #ebdbff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.content-tasks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 450px;
+}
+
+.content-tasks-left {
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.content-tasks-right {
+    width: 50%;
+    height: 100%;
+}
+
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.todo-header p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e0e3e8;
+    margin-left: 20px;
+}
+
+.todo-header button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4c4161;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    height: 50px;
+    color: #e0e3e8;
+    background: #394956;
+    border-radius: 15px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-item.completed {
+    background: #2d7a8f;
+    color: #ffffff;
+}
+
+.todo-item.completed .task-title {
+    text-decoration: line-through;
+    color: #e0f7ff;
+}
+
+
+.todo-item-left {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    height: 50px;
+    color: #e0e3e8;
+}
+
+.todo-item-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    color: #e0e3e8;
+    gap: 5px;
+}
+.todo-item-right button {
+    width: 40px;
+    height: 30px;
+    border-radius: 15px 5px 5px 15px;
+    border: none;
+    background-color: #96CCF8;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #01344F;
+    transition: display 0.2s ease;
+}
+
+.todo-item:hover .todo-item-right button {
+    display: flex;
+}
+#btn1 {
+    margin-left: 10px;
+}
+#btn2 {
+    border-radius:5px 15px 15px 5px;
+}
+
+.task-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e0e3e8;
+}
+
+mdui-checkbox {
+    width: 20px;
+    height: 20px;
+    --mdui-color-primary: #9fcaff !important;
+    --mdui-color-outline: white !important;
+    --mdui-color-on-surface: white !important;
+}
+
+mdui-checkbox::part(container) {
+    border-color: white !important;
+}
+
+mdui-checkbox::part(icon) {
+    color: white !important;
+}/* how to change scrol design */
+.todo-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: #131314;
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background: #69696a;
+    border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.content-tasks-right-top {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.content-tasks-right-bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.heatmap {
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    gap: 3px;
+    width: calc(100% - 40px);
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.heatmap-day {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease, w 0.2s ease;
+}
+
+.heatmap-day:hover {
+    transform: scale(1.15);
+}
+
+.heatmap-day.bg-stone-200 {
+    background-color: #e7e5e4;
+}
+
+.heatmap-day.bg-stone-300 {
+    background-color: #d4d4d8;
+}
+
+.heatmap-day.bg-red-500 {
+    background-color: #ef4444;
+}
+
+.heatmap-day.bg-orange-400 {
+    background-color: #fb923c;
+}
+
+.heatmap-day.bg-emerald-300 {
+    background-color: #6ee7b7;
+}
+
+.heatmap-day.bg-emerald-500 {
+    background-color: #10b981;}
+.ctrt-top {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.stat {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.stat p {
+    color: #e0e3e8;
+    font-size: 22px;
+    font-weight: bold;
+}
+.bottomline {
+    width: 50%;
+    height: 3px;
+    background-color: #96CCF8;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 3px 3px 0 0;
+    transition: all 0.3s ease;
+    left: 0;
+}
+
+.ctrt-bottom {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+.focus-time {
+    width: calc(50% - 20px);
+    height: 80%;
+    background-color: #004c70;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    color: #e0e3e8;
+    font-weight: bold;
+}   
+.focus-time-title {
+    font-size: 18px;
+    color: #d1e4ff;
+    padding: 0 0 0 20px;
+}
+.focus-time-data {
+    font-size: 38px;
+    margin-top: 10px;
+    padding: 0 0 0 20px;
+}
+.task-complated {
+    width: calc(50% - 20px);
+    height: 80%;
+    background-color: #4c4161;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    color: #eadafe;
+    font-weight: bold;
+}
+.task-complated-title {
+    font-size: 18px;
+    color: #eadafe;
+    padding: 0 0 0 20px;
+}
+.task-complated-data {
+    font-size: 38px;
+    margin-top: 10px;
+    padding: 0 0 0 20px;
+}
+
+
+/* Task modal
+    <div className="modal-blur-bg">
+      <div className="modal-card">
+        <h2>{isUpdate ? 'Update Task' : 'Add Task'}</h2>
+        <form onSubmit={onSubmit}>
+          <input
+            type="text"
+            placeholder="Task title"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+            required
+          />
+          <input
+            type="number"
+            placeholder="Duration (min)"
+            value={duration}
+            onChange={e => setDuration(e.target.value)}
+          />
+          <div className="modal-actions">
+            <button type="submit">{isUpdate ? 'Update' : 'Add'}</button>
+            <button type="button" onClick={onClose}>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+ */
+
+.modal-blur-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-card {
+    background-color: #394956;
+    padding: 20px;
+    border-radius: 25px;
+    width: 400px;
+}
+.modal-card h2 {
+    color: #e0e3e8;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.modal-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.modal-card input {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1e1f20;
+    color: #e0e3e8;
+    font-size: 16px;
+}
+.modal-card .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.modal-card .modal-actions button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #96CCF8;
+    color: #01344F;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: nunito;
+}
+#checkbox1 {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,428 @@
+.setting-view {
+    flex: 1;
+    padding: 20px;
+    background-color: #131314;
+    height: calc(100vh - 64px);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.settings-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    max-width: 920px;
+}
+
+/* ═══ LEFT NAV ═══ */
+.settings-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.settings-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #8c9299;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.settings-nav-item:hover {
+    background-color: #20242a;
+    color: #96CCF8;
+}
+
+.settings-nav-item.active {
+    background-color: #1a3a50;
+    color: #96CCF8;
+    border: 1px solid rgba(150, 204, 248, 0.15);
+}
+
+.settings-nav-item.active svg {
+    color: #96CCF8;
+}
+
+.settings-nav-item svg {
+    color: #7a8290;
+    transition: color 0.2s;
+}
+
+.settings-nav-item:hover svg {
+    color: #96CCF8;
+}
+
+/* ═══ PANELS ═══ */
+.settings-panel {
+    display: block;
+}
+
+/* ═══ SECTION ═══ */
+.settings-section {
+    background-color: #1a1e23;
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+}
+
+.settings-section-title {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7a8290;
+    padding: 16px 18px 8px;
+}
+
+/* ═══ SETTINGS ROW ═══ */
+.settings-row {
+    display: flex;
+    align-items: center;
+    padding: 16px 18px;
+    gap: 16px;
+    border-top: none;
+    border-bottom: 1px solid #262a2f;
+    transition: background 0.15s;
+}
+
+.settings-row:first-of-type {
+    border-top: none;
+}
+
+.settings-row:last-of-type {
+    border-bottom: none;
+}
+
+.settings-row:hover {
+    background-color: #20242a;
+}
+
+.settings-row-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background-color: #262a2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #96CCF8;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.settings-row:hover .settings-row-icon {
+    background-color: #30353c;
+    color: #a8e8c0;
+}
+
+.settings-row-text {
+    flex: 1;
+}
+
+.settings-row-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e0e3e8;
+}
+
+.settings-row-sub {
+    font-size: 12px;
+    color: #8c9299;
+    margin-top: 2px;
+}
+
+.settings-row-control {
+    flex-shrink: 0;
+}
+
+/* ═══ DURATION CARDS ═══ */
+.duration-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.duration-card {
+    background-color: #1a1e23;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    border: none;
+    transition: all 0.2s;
+}
+
+.duration-card:hover {
+    background-color: #20242a;
+}
+
+.duration-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #7a8290;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.duration-card-value {
+    font-family: 'Nunito', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #96CCF8;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.duration-card-unit {
+    font-size: 11px;
+    color: #8c9299;
+    font-weight: 500;
+}
+
+.duration-btns {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dur-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: #262a2f;
+    color: #8c9299;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+.dur-btn:hover {
+    background-color: #96CCF8;
+    color: #01344d;
+}
+
+/* ═══ Toggle Switch ═══ */
+.toggle {
+    width: 54px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #262a2f;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.25s;
+    flex-shrink: 0;
+}
+
+.toggle.on {
+    background-color: #a8e8c0;
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #1a1e23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #7a8290;
+    font-weight: 700;
+    transition: left 0.25s, background 0.25s;
+}
+
+.toggle.on .toggle-knob {
+    left: 27px;
+    background-color: #0a2e10;
+    color: #a8e8c0;
+}
+
+/* ═══ SLIDER ═══ */
+.step-slider {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #262a2f;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.step-slider:hover {
+    background-color: #30353c;
+}
+
+.step-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #96CCF8;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(150, 204, 248, 0.3);
+    transition: all 0.2s;
+}
+
+.step-slider::-webkit-slider-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 12px rgba(150, 204, 248, 0.5);
+}
+
+.step-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #96CCF8;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 8px rgba(150, 204, 248, 0.3);
+    transition: all 0.2s;
+}
+
+.step-slider::-moz-range-thumb:hover {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 12px rgba(150, 204, 248, 0.5);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #8c9299;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+}
+
+/* ═══ SELECT ═══ */
+.settings-select {
+    background-color: #262a2f;
+    border: none;
+    border-radius: 10px;
+    color: #96CCF8;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 12px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.settings-select:hover {
+    background-color: #30353c;
+}
+
+.settings-select:focus {
+    background-color: #30353c;
+    box-shadow: 0 0 0 2px rgba(150, 204, 248, 0.2);
+}
+
+.settings-select option {
+    background-color: #1a1e23;
+    color: #96CCF8;
+}
+
+/* ═══ BUTTONS ═══ */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-primary {
+    background-color: #96CCF8;
+    color: #01344d;
+}
+
+.btn-primary:hover {
+    background-color: #7eb8e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(150, 204, 248, 0.25);
+}
+
+.btn-secondary {
+    background-color: #262a2f;
+    color: #96CCF8;
+    border: 1px solid #30353c;
+}
+
+.btn-secondary:hover {
+    background-color: #30353c;
+    border-color: #40454c;
+}
+
+/* ═══ SUCCESS MESSAGE ═══ */
+.success-message {
+    background-color: rgba(168, 232, 192, 0.08);
+    border: 1px solid rgba(168, 232, 192, 0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: #a8e8c0;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+/* ═══ SCROLLBAR ═══ */
+.setting-view::-webkit-scrollbar {
+    width: 10px;
+}
+
+.setting-view::-webkit-scrollbar-track {
+    background: #131314;
+    border-radius: 10px;
+}
+
+.setting-view::-webkit-scrollbar-thumb {
+    background: #69696a;
+    border-radius: 10px;
+}
+
+.setting-view::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
